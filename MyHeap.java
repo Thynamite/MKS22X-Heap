@@ -2,7 +2,7 @@ public class MyHeap {
 
   private static void pushDown(int[]data,int size,int index) {
     int swap = data[index];
-    if (index >= size) {
+    if (index >= size /2 ) {
       return;
     }
     else if (swap > data[2 * index]) {
@@ -33,12 +33,19 @@ public class MyHeap {
      - precondition: index is between 0 and data.length-1 inclusive.
   */
   public static void heapify(int[] data) {
-    
+    for (int x = data.length -1; x > -1; x--) {
+      pushUp(data,x);
+    }
   }
   //  - convert the array into a valid heap. [ should be O(n) ]
 
   public static void heapsort(int[] data) {
-
+    heapify(data);
+    for (int x = 0; x < data.length-1; x++) {
+      int y = data[x];
+      data[data.length - x] = data[x];
+      data[
+    }
   }
   //  - sort the array by converting it into a heap then removing the largest value n-1 times. [ should be O(nlogn) ]
 
